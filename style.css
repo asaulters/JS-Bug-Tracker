@@ -1,0 +1,122 @@
+body{
+    width: 90%;
+    margin: auto;
+}
+.top{
+    display: grid;
+    grid-template-columns: 25% 50%;
+}
+.topH1{
+    grid-column: 1/2;
+}
+.topH3{
+    grid-column: 2/3;
+    font-size: 25px;
+}
+.inputForm{
+    background-color: rgb(228, 224, 224);
+    margin: auto;
+    padding: 5%
+}
+
+.formLabels{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#inputName,
+#inputDescription,
+#inputSeverity,
+#inputAssigned{
+    height: 50px;
+    width: 80%;
+    
+}
+.addBtn{
+    height: 40px;
+    width: 100px;
+    background-color: rgb(49, 49, 160);
+    color: wheat;
+    font-size: 25px;
+}
+::placeholder,
+.selectOption,
+.sortOption{
+    font-size: 20px;
+}
+
+.bug-item{
+    margin: auto;
+    width: 90%;
+    background-color: rgb(245, 240, 240);
+    display: grid;
+    grid-template-columns: 15% 15% 70%;
+    grid-template-rows: 10% 10% 40% 15% 25%;
+    height: max-content;
+    padding:5%;
+    border-radius: 15px;
+}
+.bugNameDiv{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    font-size: 20px;
+    
+    padding-bottom: 5%;
+    
+    width: 95%;
+}
+.bugDesDiv{
+    grid-column: 1/4;
+    grid-row: 3/4;
+    font-size: 20px;
+    
+    padding-bottom: 5%;
+    padding-top: 5%;
+    width: 95%;
+}
+.bugSevDiv{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    font-size: 20px;
+    text-align: center;
+}
+.bugRespDiv{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    font-size: 20px;
+    padding-top: 2%;
+}
+
+.bugStatusDiv{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-top: 20%;
+    text-align: center;
+
+}
+
+.closeBugButton{
+    grid-column: 1/2;
+    grid-row: 5/5;
+    margin-top: 40%;
+    margin-bottom: -45%;
+    text-align: center;
+    width: 50%;
+    height: 60px;
+}
+.deleteBugButton{
+    grid-column: 2/3;
+    grid-row: 5/5;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    height: 60px;
+    margin-top: 40%;
+    margin-bottom: -45%;
+    margin-left: -30%;
+}
+
+input[type="text"]
+{
+    font-size:24px;
+}

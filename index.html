@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top">
+        <h1 class="topH1">JS Bug Tracker</h1>
+        <h3 class="topH3">byAdam Saulters</h3>
+    </div>
+    <div class="inputDiv">
+        <form action="#" class="inputForm">
+            <h2 class="inputH2">Add New Issue</h2>
+            <label for="inputName" class="formLabels">Name:</label><br><br>
+            <input type="text" name="inputName" id="inputName" placeholder="Issue Name"><br><br>
+            <label for="inputDescription" class="formLabels">Description:</label><br><br>
+            <input type="text" name="inputDescription" id="inputDescription" placeholder="Describe the issue"><br><br>
+            <label for="inputSeverity" class="formLabels">Severity:</label><br><br>
+            <select name="inputSeverity" id="inputSeverity" placeholder="How Severe is this?">
+                <optgroup class="selectOption">
+                    <option hidden="choose" >Choose Severity</option>
+                    <option value="low" >Low</option>
+                    <option value="medium" >Medium</option>
+                    <option value="high" >High</option>
+                </optgroup>
+            </select><br><br>
+            <label for="inputAssigned" class="formLabels">Assigned To:</label><br><br>
+            <input type="text" name="inputAssigned" id="inputAssigned" placeholder="Enter responsible"><br><br>
+            <button type="submit" class="addBtn">Add</button>
+        </form>
+    </div>
+
+    <section class="bugLog">
+        <div class="bugLogTop">
+            <h1 class="bugLogH1">Bug Log</h1>
+            <select name="sort" id="bugLogSort">
+                <optgroup class="sortOption">
+                    <option value="bugLogSeverity" >Low</option>
+                    <option value="bugLogResponsible" >Responsible</option>
+                    <option value="bugLogincomplete" >Incomplete</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="bugLogLog">
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+    <script src="/script.js"></script>
+</body>
+</html>
