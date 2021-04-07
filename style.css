@@ -60,7 +60,7 @@ body{
     grid-column: 1/4;
     grid-row: 1/2;
     font-size: 20px;
-    
+    font-weight: 700;
     padding-bottom: 5%;
     
     width: 95%;
@@ -68,8 +68,8 @@ body{
 .bugDesDiv{
     grid-column: 1/4;
     grid-row: 3/4;
-    font-size: 20px;
-    
+    font-size: 25px;
+    font-weight: 900;
     padding-bottom: 5%;
     padding-top: 5%;
     width: 95%;
@@ -78,31 +78,42 @@ body{
     grid-column: 1/2;
     grid-row: 4/5;
     font-size: 20px;
-    text-align: center;
+    
 }
 .bugRespDiv{
     grid-column: 2/3;
     grid-row: 4/5;
     font-size: 20px;
     padding-top: 2%;
+    
 }
 
 .bugStatusDiv{
     grid-column: 1/2;
     grid-row: 2/3;
-    padding-top: 20%;
+    /* padding-top: 20%; */
     text-align: center;
-
+    border: 1px solid gray;
+    width: 30%;
+    padding: 5% 10%;
+    background-color: lightskyblue;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
 }
 
 .closeBugButton{
     grid-column: 1/2;
     grid-row: 5/5;
-    margin-top: 40%;
-    margin-bottom: -45%;
+    /* margin-top: 40%; */
+    /* margin-bottom: -45%; */
     text-align: center;
     width: 50%;
     height: 60px;
+    border: 1px gray solid;
+    background-color: rgb(221, 145, 3);
+    color: white;
+    border-radius: 10px;
 }
 .deleteBugButton{
     grid-column: 2/3;
@@ -111,9 +122,18 @@ body{
     text-align: center;
     width: 50%;
     height: 60px;
-    margin-top: 40%;
-    margin-bottom: -45%;
+    /* margin-top: 40%; */
+    /* margin-bottom: -45%; */
     margin-left: -30%;
+    border: 1px gray solid;
+    background-color: rgb(245, 66, 66);
+    color: white;
+    border-radius: 10px;
+}
+
+.clockImg{
+    width: 50px;
+    height: 50px;
 }
 
 input[type="text"]

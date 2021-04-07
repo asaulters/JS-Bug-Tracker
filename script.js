@@ -63,9 +63,16 @@ function addBug(e){
     closeBugButton.classList.add('closeBugButton');
     const deleteBugButton = document.createElement("button");
     deleteBugButton.classList.add('deleteBugButton');
+
+     // imgs
+     let clockImg = document.createElement("img");
+     clockImg.classList.add('clockImg');
+     clockImg.src="http://clipartmag.com/images/clock-clipart-12.png";
+    //  bugSevDiv.appendChild(clockImg);
+
     //Values to div
-    bugNameDiv.innerText = newBugItem.bugName;
-    bugDesDiv.innerText = newBugItem.description;
+    bugNameDiv.innerText = "Issue Name: " + newBugItem.bugName;
+    bugDesDiv.innerText = "Issue Description: " + newBugItem.description;
     bugSevDiv.innerText = newBugItem.severity;
     bugRespDiv.innerText = newBugItem.responsible;
     newBugItem.bugStatus="Open";
@@ -79,6 +86,7 @@ function addBug(e){
     const newBug = document.createElement("div");
     newBug.appendChild(bugNameDiv);
     newBug.appendChild(bugDesDiv);
+    bugSevDiv.appendChild(clockImg);
     newBug.appendChild(bugSevDiv);
     newBug.appendChild(bugRespDiv);
     newBug.appendChild(bugStatusDiv);
