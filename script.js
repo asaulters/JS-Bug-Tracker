@@ -68,7 +68,10 @@ function addBug(e){
      let clockImg = document.createElement("img");
      clockImg.classList.add('clockImg');
      clockImg.src="http://clipartmag.com/images/clock-clipart-12.png";
-    //  bugSevDiv.appendChild(clockImg);
+     let personImg = document.createElement("img");
+     personImg.classList.add('personImg');
+     personImg.src="http://getdrawings.com/img/head-and-shoulders-silhouette-19.png";
+    
 
     //Values to div
     bugNameDiv.innerText = "Issue Name: " + newBugItem.bugName;
@@ -86,9 +89,10 @@ function addBug(e){
     const newBug = document.createElement("div");
     newBug.appendChild(bugNameDiv);
     newBug.appendChild(bugDesDiv);
-    bugSevDiv.appendChild(clockImg);
+    bugSevDiv.prepend(clockImg);
     newBug.appendChild(bugSevDiv);
     newBug.appendChild(bugRespDiv);
+    bugRespDiv.prepend(personImg);
     newBug.appendChild(bugStatusDiv);
     newBug.appendChild(closeBugButton);
     newBug.appendChild(deleteBugButton);

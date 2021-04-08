@@ -45,15 +45,31 @@ body{
     font-size: 20px;
 }
 
-.bug-item{
+/* .bugLogTop{
+
+} */
+.bugListDiv{
+    display: flex;
+    align-items: center;
+}
+.bugLogLog,
+.bug-list{
     margin: auto;
     width: 90%;
+    /* margin-right: 50%; */
+
+}
+
+.bug-item{
+    /* margin: auto;     */
+    /* margin-right: 100px; */
+    width: 100%;
     background-color: rgb(245, 240, 240);
     display: grid;
     grid-template-columns: 15% 15% 70%;
     grid-template-rows: 10% 10% 40% 15% 25%;
-    height: max-content;
-    padding:5%;
+    height: min-content;
+    padding:2%;
     border-radius: 15px;
 }
 .bugNameDiv{
@@ -77,14 +93,16 @@ body{
 .bugSevDiv{
     grid-column: 1/2;
     grid-row: 4/5;
-    font-size: 20px;
-    
+    font-size: 25px;
+    /* padding-bottom: 60px; */
+    margin-top: -5px;
 }
 .bugRespDiv{
     grid-column: 2/3;
     grid-row: 4/5;
-    font-size: 20px;
-    padding-top: 2%;
+    font-size: 25px;
+    /* padding-top: 2%; */
+    margin-top: -20px;
     
 }
 
@@ -129,11 +147,25 @@ body{
     background-color: rgb(245, 66, 66);
     color: white;
     border-radius: 10px;
+    margin-bottom: 2px;
+    margin-top: -2px;
 }
 
 .clockImg{
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    
+}
+
+.personImg{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: -30%;
+    /* margin-top: 5px; */
+    /* margin-bottom: 10%; */
+    padding-top: 17px;
 }
 
 input[type="text"]
