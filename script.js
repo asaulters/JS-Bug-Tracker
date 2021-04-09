@@ -7,6 +7,7 @@ let addBtn = document.querySelector('.addBtn');
 let buglogSort = document.querySelector('#bugLogSort');
 let bugLog = document.querySelector('.bugLogLog');
 let bugLogArray = [];
+let closeBtn = document.querySelectorAll('.closeBugButton');
 
 
 //constructors
@@ -46,7 +47,7 @@ function addBug(e){
     
 
     //New Div
-    const bugDiv = document.createElement("div");
+    const bugDiv = document.createElement("ul");
     bugDiv.classList.add('bugListDiv');
     //create prop divs
     const bugNameDiv = document.createElement("div");
@@ -114,4 +115,17 @@ function addBug(e){
     bugName.value= "";
 }
 
+// function closeBugLog(e){
+//     //declare vars
+//     e.preventDefault();
+
+//     //change status from open to closed
+//     this.Bug.status="Closed";
+// }
+
+
+
 addBtn.addEventListener('click', addBug);
+closeBtn.addEventListener('click', ()=> {
+    console.log(closeBtn);
+});
