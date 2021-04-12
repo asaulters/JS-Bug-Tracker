@@ -7,20 +7,9 @@ let addBtn = document.querySelector('.addBtn');
 let buglogSort = document.querySelector('#bugLogSort');
 let bugLog = document.querySelector('.bugLogLog');
 let bugLogArray = [];
-let closeBtn = document.querySelectorAll('.closeBugButton');
+let bugItem;
 
 
-//constructors
-
-// function Bug(){
-//     constructor(Bugname, description, severity, responsible) {
-//         this.Bugname = Bugname;
-//         this.description = description;     
-//         this.severity = severity;
-//         this.responsible = responsible;
-//         this.status = "open";
-//     }
-// }
 
 function Bug(bugName, description, severity, responsible, status){
         this.bugName = bugName;
@@ -43,12 +32,12 @@ function addBug(e){
     let resp = responsible.value;
     let newBugName = bugName.value;
     let bugStatus;
-    let newBugItem = new Bug(newBugName, des, sev, resp, bugStatus);
+    newBugItem = new Bug(newBugName, des, sev, resp, bugStatus);
     
 
     //New Div
-    const bugDiv = document.createElement("ul");
-    bugDiv.classList.add('bugListDiv');
+    // const bugDiv = document.createElement("ul");
+    // bugDiv.classList.add('bugListDiv');
     //create prop divs
     const bugNameDiv = document.createElement("div");
     bugNameDiv.classList.add('bugNameDiv');
@@ -97,17 +86,22 @@ function addBug(e){
     newBug.appendChild(bugStatusDiv);
     newBug.appendChild(closeBugButton);
     newBug.appendChild(deleteBugButton);
-    newBug.classList.add('bug-item');
+    newBug.classList.add('bugItem');
     
 
     //NewbugList
     const NewbugList = document.createElement("ul");
-    NewbugList.classList.add('bug-list');
+    NewbugList.classList.add('bugList');
     NewbugList.appendChild(newBug);
 
     //append new bug to element
-    bugDiv.appendChild(NewbugList);
-    bugLog.appendChild(bugDiv);
+    // bugDiv.appendChild(NewbugList);
+    bugLog.appendChild(NewbugList);
+    bugLogArray.push(NewbugList);
+    console.log(bugLogArray)
+
+    //Local Storage
+  
     // reset form
     description.value = "";
     severity.value= "Choose Severity";
@@ -115,17 +109,62 @@ function addBug(e){
     bugName.value= "";
 }
 
-// function closeBugLog(e){
-//     //declare vars
-//     e.preventDefault();
+function closeBugLog(e){
+    //declare vars
+    e.preventDefault();
+    const item = e.target;
+    //change status from open to closed
+    if(item.classList[0] === 'closeBugButton'){
+        const bugItem = item.parentElement;
+        bugItem.classList.toggle("completed");
+        this.bugStatus = "Closed"
+        this.status = "Closed"
+        this.bugStatus.innerText ="Closed"
+        this.status.innerText ="Closed"
+        console.log(this.bugStatus)
+        console.log("bug closed");
+        console.log(bugLogArray)
 
-//     //change status from open to closed
-//     this.Bug.status="Closed";
-// }
+    }
+    //delete
+    if(item.classList[0] === 'deleteBugButton'){
+        const bugItem = item.parentElement; 
+        // bugItem.addEventListener("transitionend", function() {
+            bugItem.remove();
+            console.log(bugLogArray)
+        // });
+
+    }
+    
+}
+
+function filterBugs(e){
+    let bugs = bugLog.childNodes;
+    bugs.forEach(function(bugLog) {
+        switch(e.target.value){
+            case "all":
+                bugs.style.display ="flex";
+                break;
+            case "complete":
+                if(buglogSort.classList.contains("completed")){
+                    bugs.style.display = "flex";
+                } else {
+                    bugs.style.display = "none";
+                }
+                break;
+            case "incomplete":
+                if(!buglogSort.classList.contains("completed")){
+                    bugs.style.display ="flex";
+                }  else {
+                    bugs.style.display = "none";
+                }   
+                break;
+        }
+    })
+}
 
 
 
 addBtn.addEventListener('click', addBug);
-closeBtn.addEventListener('click', ()=> {
-    console.log(closeBtn);
-});
+bugLog.addEventListener('click', closeBugLog);
+buglogSort.addEventListener('click', filterBugs);

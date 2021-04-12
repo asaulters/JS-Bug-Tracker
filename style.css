@@ -53,14 +53,18 @@ body{
     align-items: center;
 }
 .bugLogLog,
-.bug-list{
+.bugList{
     margin: auto;
     width: 90%;
     /* margin-right: 50%; */
 
 }
 
-.bug-item{
+.bugList{
+    display: flex;
+}
+
+.bugItem{
     /* margin: auto;     */
     /* margin-right: 100px; */
     width: 100%;
@@ -171,4 +175,9 @@ body{
 input[type="text"]
 {
     font-size:24px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
